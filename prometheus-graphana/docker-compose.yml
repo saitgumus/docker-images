@@ -14,10 +14,10 @@ services:
       - "9090:9090"
     volumes:
       - ./prometheus:/etc/prometheus
-      - ./prometheus/prometheus-data:/prometheus
+      - ./prometheus/data/:/prometheus
     restart: unless-stopped
     command:
-      - "--config.file=./prometheus/prometheus.yml"
+      - "--config.file=/etc/prometheus/prometheus.yml"
 
   grafana:
     image: grafana/grafana:latest
